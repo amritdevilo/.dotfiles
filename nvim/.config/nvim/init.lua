@@ -3,7 +3,7 @@ local vim = vim
 -- Install package manager
 local packerpath = vim.fn.stdpath('data') .. '/site/pack/packer/start/packer.nvim'
 if not vim.loop.fs_stat(packerpath) then
-  vim.fn.system {
+  local rc = vim.fn.system {
     'git',
     'clone',
     '--depth',
@@ -11,6 +11,7 @@ if not vim.loop.fs_stat(packerpath) then
     'https://github.com/wbthomason/packer.nvim.git',
     packerpath,
   }
+  print(rc)
 end
 
 require('packer').startup(function()
