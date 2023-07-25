@@ -1,5 +1,17 @@
-require('options')
-require('keymap')
+local vim = vim
+
+-- Install package manager
+local packerpath = vim.fn.stdpath('data') .. '/site/pack/packer/start/packer.nvim'
+if not vim.loop.fs_stat(packerpath) then
+  vim.fn.system {
+    'git',
+    'clone',
+    '--depth',
+    '1',
+    'https://github.com/wbthomason/packer.nvim.git',
+    packerpath,
+  }
+end
 
 require('packer').startup(function()
     use 'wbthomason/packer.nvim'
@@ -38,6 +50,8 @@ require('packer').startup(function()
     use { 'rust-lang/rust.vim' }
 end)
 
+require('options')
+require('keymap')
 require('colors')
 require('plugins.nerd')
 require('plugins.lsp')
