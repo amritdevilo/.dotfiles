@@ -49,6 +49,8 @@ require('packer').startup(function()
     use 'jose-elias-alvarez/null-ls.nvim'
     --use { 'fatih/vim-go', run = ':GoUpdateBinaries' }
     use { 'rust-lang/rust.vim' }
+
+    use 'christoomey/vim-tmux-navigator'
 end)
 
 require('options')
