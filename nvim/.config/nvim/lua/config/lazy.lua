@@ -50,6 +50,8 @@ require('litee.lib').setup({})
 -- configure litee-calltree.nvim
 require('litee.calltree').setup({})
 
+--require('vim-slumlord').setup()
+
 -- [[ Configure LSP ]]
 --  This function gets run when an LSP connects to a particular buffer.
 local on_attach = function(client, bufnr)
@@ -115,3 +117,5 @@ lspconfig.pyright.setup({
   flags = { debounce_text_changes = 150 },
   settings = {}
 })
+
+
